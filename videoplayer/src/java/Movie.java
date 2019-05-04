@@ -69,7 +69,7 @@ class Movie implements
 
 		currentPosition = 0;
 
-		mediaPlayer = MediaPlayer.create(this, Uri.parse(this.uri));
+		mediaPlayer = MediaPlayer.create(this.activity, Uri.parse(this.uri));
 		mediaPlayer.setScreenOnWhilePlaying(true);
 		mediaPlayer.setOnPreparedListener(this);
 		mediaPlayer.setOnCompletionListener(this);
