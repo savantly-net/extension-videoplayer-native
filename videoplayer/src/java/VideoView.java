@@ -109,7 +109,7 @@ public class VideoView extends SurfaceView implements View.OnClickListener {
 	public void onClick(View v){
 		Logger.log("VideoView: onClick");
 		if (this.onClickListener != null) {
-			this.onClickListener.click(v);
+			this.onClickListener.onClick(v);
 		}
 		return;
 	}
