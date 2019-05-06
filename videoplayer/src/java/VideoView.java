@@ -101,7 +101,7 @@ public class VideoView extends SurfaceView implements View.OnClickListener {
 		}
 	}
 	
-	public void setOnClickListner(View.OnClickListener listener) {
+	public void setOnClickListener(View.OnClickListener listener) {
 		this.onClickListener = listener;
 	}
 
