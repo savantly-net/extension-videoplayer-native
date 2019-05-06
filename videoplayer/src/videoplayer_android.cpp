@@ -112,6 +112,21 @@ extern "C" {
         QueueCommand(&cmd);
     }
 
+    JNIEXPORT void JNICALL Java_com_defold_android_videoplayer_Movie_videoTouch(JNIEnv* env, jobject video, jint id)
+    {
+        dmLogWarning("%s:%d:", __FUNCTION__, __LINE__);
+        assert(id >= 0 && id < g_VideoContext.m_NumVideos);
+
+        SAndroidVideoInfo* info = &g_VideoContext.m_Videos[id];
+
+        dmVideoPlayer::Command cmd;
+        memset(&cmd, 0, sizeof(cmd));
+        cmd.m_Type = dmVideoPlayer::CMD_TOUCH;
+        cmd.m_ID = id;
+        cmd.m_Callback = info->m_Callback;
+        QueueCommand(&cmd);
+    }
+
 #ifdef __cplusplus
 }
 #endif

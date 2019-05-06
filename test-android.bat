@@ -3,4 +3,4 @@ adb uninstall com.defoldexample.videoplayer
 adb install -r build\armv7-android\VideoPlayer\VideoPlayer.apk
 adb shell am start -a android.intent.action.MAIN -n com.defoldexample.videoplayer/com.dynamo.android.DefoldActivity
 
-REM adb logcat | findstr -e defold -e videoplayer
+REM adb logcat | findstr "defold|videoplayer"

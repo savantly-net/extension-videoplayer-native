@@ -24,7 +24,8 @@ import java.lang.IllegalArgumentException;
 
 class Movie implements
 	MediaPlayer.OnPreparedListener,
-	MediaPlayer.OnCompletionListener {
+	MediaPlayer.OnCompletionListener,
+	View.OnClickListener {
 
 	private int id;
 	private String uri;
@@ -44,6 +45,7 @@ class Movie implements
 	// Add more functions callback to C to convey messages
 	private native void videoIsReady(int id, int width, int height);
 	private native void videoIsFinished(int id);
+	private native void videoTouch(int id);
 
 	public Movie(final Context context, String _uri, int _id, boolean _playSound){
 		Logger.log("Movie: Movie()");
@@ -224,5 +226,11 @@ class Movie implements
 	public void pause(){
 		Logger.log("Movie: Movie pause()");
 		mediaPlayer.pause();
+	}
+	
+	@Override
+	public void onClick(View v){
+		Logger.log("Movie: onClick");
+		videoTouch(id);
 	}
 }

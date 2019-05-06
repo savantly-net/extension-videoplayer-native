@@ -99,6 +99,10 @@ void ProcessCommandQueue(int count, Command* commands)
             eventinfo.m_Event = VIDEO_EVENT_FINISHED;
 			break;
 
+        case CMD_TOUCH:
+            eventinfo.m_Event = VIDEO_EVENT_TOUCH;
+			break;
+
         default:
             assert(false);
         }
