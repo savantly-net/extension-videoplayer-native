@@ -83,7 +83,7 @@ class Movie implements
 
 		Logger.log("Movie: new VideoView");
 		videoView = new VideoView((Context)activity);
-		//videoView.setOnClickListener(this);
+		videoView.setOnClickBubble(this);
 		videoView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
 		final Movie instance = this;

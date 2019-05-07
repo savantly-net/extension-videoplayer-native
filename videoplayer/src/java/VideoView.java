@@ -13,7 +13,7 @@ public class VideoView extends SurfaceView implements View.OnClickListener {
 	private int width;
 	private int height;
 	private float aspectRatio;
-	private View.OnClickListener onClickListener;
+	private View.OnClickListener onClickBubble;
 
 	public VideoView(Context context) {
 		super(context);
@@ -101,15 +101,15 @@ public class VideoView extends SurfaceView implements View.OnClickListener {
 		}
 	}
 	
-	public void setOnClickListener(View.OnClickListener listener) {
-		this.onClickListener = listener;
+	public void setOnClickBubble(View.OnClickListener listener) {
+		this.onClickBubble = listener;
 	}
 
 	@Override
 	public void onClick(View v){
 		Logger.log("VideoView: onClick");
-		if (this.onClickListener != null) {
-			this.onClickListener.onClick(v);
+		if (this.onClickBubble != null) {
+			this.onClickBubble.onClick(v);
 		}
 		return;
 	}
